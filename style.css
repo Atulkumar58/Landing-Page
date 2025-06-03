@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url("https://images7.alphacoders.com/578/thumb-1920-578143.jpg") center center/cover no-repeat fixed;
+    color: white;
+  }
+
+  /* Navbar styles */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 51, 102, 0.5); /* semi-transparent */
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  }
+
+  nav .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #FFD700; /* gold */
+    letter-spacing: 2px;
+    font-family: 'Arial Black', Gadget, sans-serif;
+  }
+
+  nav .nav-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  nav button {
+    background: #0074D9;
+    color: white;
+    border: 2px solid #FFD700;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  nav button:hover {
+    background: #FFD700;
+    color: #003366;
+    border-color: #003366;
+    box-shadow: 0 0 10px #FFD700;
+  }
+
+  /* Hero section */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: calc(100vh - 72px); /* minus navbar height */
+    padding: 0 1rem;
+    /* Remove background property here */
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    letter-spacing: 5px;
+    color: #FFD700;
+    margin-bottom: 1rem;
+    animation: glowText 2.5s ease-in-out infinite alternate;
+  }
+
+  .hero p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    line-height: 1.6;
+    color: #AEBED8;
+    animation: fadeInText 3s ease forwards;
+    opacity: 0;
+    animation-delay: 1s;
+  }
+
+  /* Footer */
+  footer {
+    background-color: rgba(0, 31, 63, 0.5); /* semi-transparent */
+    padding: 1.5rem 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #778CA3;
+  }
+
+  footer a {
+    color: #FFD700;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  .helmet-container { 
+      width: 200px;
+      height: 200px;
+      
+      background-size: cover;
+      background-position: center;
+      transition: transform 1s ease-in-out;
+    }
+
+    .zoom-in {
+        /* background-image: url("https://i.etsystatic.com/35783435/r/il/880a39/4995205704/il_fullxfull.4995205704_tog3.jpg"); */
+        background-image: url("https://dl.myminifactory.com/object-assets/579faf9b7dfb6/images/720X720-f0523666db2a2d2e2206354edbd187165ce3f09c.jpg");
+        transform: scale(3.0);
+        
+    }
+
+  /* Animations */
+  @keyframes glowText {
+    0% {
+      text-shadow:
+        0 0 5px #FFD700,
+        0 0 10px #FFD700,
+        0 0 20px #FFD700;
+    }
+    100% {
+      text-shadow:
+        0 0 15px #FFEA00,
+        0 0 30px #FFD700,
+        0 0 45px #FFD700,
+        0 0 60px #FFD700;
+    }
+  }
+
+  @keyframes fadeInText {
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav {
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 1rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      letter-spacing: 3px;
+    }
+    .hero p {
+      font-size: 1rem;
+      max-width: 90%;
+    }
+    nav .nav-buttons {
+      width: 100%;
+      justify-content: center;
+    }
+    nav button {
+      width: 120px;
+      font-size: 0.9rem;
+      padding: 0.5rem;
+    }
+  }
